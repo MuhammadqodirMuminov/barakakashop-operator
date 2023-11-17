@@ -1,1 +1,2 @@
-export { Loading } from './loading';
+export { Loader } from './Loader';
+export { ContentCenter } from "./Content"

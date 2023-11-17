@@ -1,7 +1,7 @@
-import { HistoryRouter } from './history-router';
-import { history } from '@/libs';
 import { Router } from '@/router';
 import { GlobalStyles } from '@/styles';
+import { history } from '@/utils';
+import { HistoryRouter } from './history-router';
 
 export const App = () => {
   return (

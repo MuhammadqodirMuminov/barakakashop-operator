@@ -16,3 +16,5 @@ export const getRoute = (...routes: Array<string>) => {
 };
 
 export const getPrefix = (name: string, action: string) => `${name}${PREFIX}${action}`;
+
+

@@ -1,0 +1,20 @@
+.header {
+  padding: 0 15px;
+  background: var(--white);
+
+  &__icon {
+    font-size: 20px;
+  }
+
+  &__menu {
+    margin-right: 10px;
+
+    span {
+      font-size: 20px;
+    }
+  }
+
+  &__logout-btn {
+    margin-left: 0;
+  }
+}

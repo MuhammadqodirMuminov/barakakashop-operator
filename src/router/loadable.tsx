@@ -1,21 +1,18 @@
-/* eslint-disable prettier/prettier */
+import { Loader } from '@/components';
 import loadable from '@loadable/component';
-import { Loading } from '@/components';
 const handleCatchChunkError = () => {
-  // window.location.reload();
-
-  return { default: Loading };
+  return { default: Loader };
 };
 
 export const Home = loadable(
   () => import('@/pages').then(({ Home }) => ({ default: Home })).catch(handleCatchChunkError),
-  { fallback: <Loading /> },
+  { fallback: <Loader /> },
 );
 
-
-
-
 export const UssdLayout = loadable(
-  () => import('@/pages').then(({ UssdLayout }) => ({ default: UssdLayout })).catch(handleCatchChunkError),
-  { fallback: <Loading /> },
+  () =>
+    import('@/pages')
+      .then(({ UssdLayout }) => ({ default: UssdLayout }))
+      .catch(handleCatchChunkError),
+  { fallback: <Loader /> },
 );
