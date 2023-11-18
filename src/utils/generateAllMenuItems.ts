@@ -2,8 +2,8 @@ const getItem = (label: string, key: string, icon: any, children: any) => ({
   key,
   icon,
   label,
-  children,
-});
+  children
+})
 
 export const generateAllMenuItems = (list: any) =>
   list?.map((item: any) =>
@@ -11,6 +11,6 @@ export const generateAllMenuItems = (list: any) =>
       item.label,
       item.key,
       (item.icon && item.icon) || undefined,
-      (item.children && generateAllMenuItems(item.children)) || undefined,
-    ),
-  );
+      (item.children && generateAllMenuItems(item.children)) || undefined
+    )
+  )

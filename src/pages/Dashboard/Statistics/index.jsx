@@ -1,7 +1,7 @@
-import {Col, Row, Statistic} from 'antd';
-import {formatter} from '../constants';
+import { Col, Row, Statistic } from "antd"
+import { formatter } from "../constants"
 
-export const Statistics = ({statistics}) => (
+export const Statistics = ({ statistics }) => (
   <Row gutter={16}>
     <Col span={6}>
       <Statistic title="Tutors" value={statistics?.tutors} formatter={formatter} />
@@ -25,4 +25,4 @@ export const Statistics = ({statistics}) => (
       />
     </Col>
   </Row>
-);
+)

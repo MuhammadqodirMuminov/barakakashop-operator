@@ -1,4 +1,3 @@
-export { history } from './history';
-export { generateAllMenuItems } from './generateAllMenuItems';
-export * from './general';
-export * from './localStorage';
+export { generateAllMenuItems } from "./generateAllMenuItems"
+export { history } from "./history"
+export {passwordRegex} from "./general"

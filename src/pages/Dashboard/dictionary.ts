@@ -1,3 +1,3 @@
 export const dashboardDictionary = {
-  title: 'Dashboard',
-};
+  title: "Dashboard"
+}

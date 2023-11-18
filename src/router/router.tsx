@@ -1,11 +1,12 @@
-import { Layout } from '@/Layout';
-import { Loader } from '@/components';
-import { ROUTES } from '@/constants';
-import { Dashboard } from '@/pages';
-import { Suspense } from 'react';
-import { useRoutes } from 'react-router-dom';
-import { ProtectedRoutes } from './protected.routes';
-import { PublicRoutes } from './public.routes';
+import { Layout } from "@/Layout"
+import { Loader } from "@/components"
+import { ROUTES } from "@/constants"
+import { Dashboard } from "@/pages"
+import { Suspense } from "react"
+import { useRoutes } from "react-router-dom"
+import { SignIn } from "./loadable"
+import { ProtectedRoutes } from "./protected.routes"
+import { PublicRoutes } from "./public.routes"
 
 export const Routes = ({ isAuth }: { isAuth: boolean }) =>
   useRoutes([
@@ -22,14 +23,24 @@ export const Routes = ({ isAuth }: { isAuth: boolean }) =>
                 <Suspense fallback={<Loader />}>
                   <Dashboard />
                 </Suspense>
-              ),
-            },
-          ],
-        },
-      ],
+              )
+            }
+          ]
+        }
+      ]
     },
     {
       element: <PublicRoutes isAuth={isAuth} />,
-      children: [],
-    },
-  ]);
+      children: [
+        {
+          index: true,
+          path: ROUTES.signIn,
+          element: (
+            <Suspense fallback={<Loader />}>
+              <SignIn />
+            </Suspense>
+          )
+        }
+      ]
+    }
+  ])

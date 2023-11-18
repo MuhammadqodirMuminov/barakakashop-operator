@@ -1,2 +1,2 @@
-export { serviceAgentMenu } from './service-agent';
-export { ussdMenu } from './ussd';
+export { serviceAgentMenu } from "./service-agent"
+export { ussdMenu } from "./ussd"

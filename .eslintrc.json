@@ -34,7 +34,9 @@
     "default-param-last": "off",
     "react/display-name": "off"
   },
-  "settings": { "import/resolver": { "node": { "paths": ["src"] } }, "react": { "version": "detect" }
+  "settings": {
+    "import/resolver": { "node": { "paths": ["src"] } },
+    "react": { "version": "detect" }
   },
   "root": true
 }
