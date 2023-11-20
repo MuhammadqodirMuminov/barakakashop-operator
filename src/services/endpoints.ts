@@ -1,5 +1,6 @@
 export const EndPointes = {
 	auth :{
-		signIn : '/auth/operator/login'
+		signIn : '/auth/operator/login',
+		getme : '/auth/getme'
 	}
 }

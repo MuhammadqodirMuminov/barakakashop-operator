@@ -18,5 +18,13 @@ export const AuthService = {
       saveStorage(response.data)
     }
     return response
+  },
+  async getMe() {
+    const response = await $axios.get<IAuthResponse>(EndPointes.auth.getme)
+
+    if (response.data.accessToken) {
+      saveStorage(response.data)
+    }
+    return response
   }
 }

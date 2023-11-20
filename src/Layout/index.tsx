@@ -12,7 +12,7 @@ import { Menu } from "./Menu"
 const cn = classnamesBind.bind(styles)
 
 export const Layout = () => {
-  const [value, setValue] = useState(false)
+  const [value, setValue] = useState(true)
   const sideWidth = value ? 80 : 250
 
   const toggle = () => setValue(!value)

@@ -11,7 +11,7 @@ import { IFormProps } from "./form.props"
 const cn = classnameBind.bind(styles)
 
 export const AuthForm = ({ text, login, onFinish, children }: IFormProps) => {
-  const { isAuth } = useTypedSelector((state) => state.auth)
+  const { loading } = useTypedSelector((state) => state.auth)
 
   return (
     <Form className={cn("auth__form")} layout="vertical" onFinish={onFinish} autoComplete="off">
@@ -19,7 +19,7 @@ export const AuthForm = ({ text, login, onFinish, children }: IFormProps) => {
 
       <PrimaryBtn
         type="primary"
-        loading={isAuth}
+        loading={loading.sign}
         htmlType="submit"
         className={cn("auth__form-btn")}
       >

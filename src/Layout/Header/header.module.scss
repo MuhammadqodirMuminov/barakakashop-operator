@@ -1,6 +1,7 @@
 .header {
   padding: 0 15px;
   background: var(--white);
+  height : 8vh;
 
   &__icon {
     font-size: 20px;
@@ -14,7 +15,12 @@
     }
   }
 
+  &__row {
+    flex-decoration: space-betwen;
+  }
+
   &__logout-btn {
     margin-left: 0;
+    margin: 0 auto;
   }
 }
