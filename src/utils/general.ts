@@ -1,3 +1,5 @@
+import { AxiosError } from "axios"
+
 export const LANG = "lang"
 const PREFIX = "/"
 
@@ -17,6 +19,22 @@ export const getRoute = (...routes: Array<string>) => {
 
 export const getPrefix = (name: string, action: string) => `${name}${PREFIX}${action}`
 
-export const passwordRegex = new RegExp(
-	/^(?=.*[0-9])[a-zA-Z0-9][a-zA-Z0-9!@#$%^&*.,_-]{6,17}$/
-);
+export const passwordRegex = new RegExp(/^(?=.*[0-9])[a-zA-Z0-9][a-zA-Z0-9!@#$%^&*.,_-]{6,17}$/)
+
+export const makeErrMsg = (error: any | AxiosError) => {
+  if (!error.response?.data) {
+    return error.message
+  }
+
+  if (error.response?.data) {
+    return error.response.data.message
+  }
+
+  const { err: responseError } = error.response.data
+
+  if (responseError.errMsg instanceof Array) {
+    return responseError.errMsg[0]
+  }
+
+  return responseError.errMsg
+}

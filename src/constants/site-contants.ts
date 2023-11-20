@@ -1,0 +1,1 @@
+export const BASE_URL = 'http://loclahost:3000/api'
