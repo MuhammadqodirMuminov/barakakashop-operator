@@ -2,7 +2,7 @@ import { cliearStorage } from "@/helpers"
 import { createSlice } from "@reduxjs/toolkit"
 import { StoreSlices } from "../slices-name"
 import { SignIn } from "./auth.actions"
-import { IAuthData, InitialState } from "./auth.interface"
+import { InitialState } from "./auth.interface"
 
 const initialState: InitialState = {
   user: null,
@@ -48,7 +48,7 @@ export const authSlice = createSlice({
         state.error = null
         state.isAuth = true
         state.loading.sign = false
-        state.user = payload.data as IAuthData
+        state.user = payload.data
         state.token = payload.accessToken
       })
       .addCase(SignIn.rejected, (state, { payload }) => {

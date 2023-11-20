@@ -1,3 +1,7 @@
+import { AxiosResponse } from "axios"
+
+export interface IAuthAxiosResponse extends AxiosResponse {}
+
 export interface IAuthResponse {
   status: number
   message: string
@@ -20,10 +24,11 @@ export interface IAuthData {
 export interface IAuthSignIn {
   username: string
   password: string
+  callback: () => void
 }
 
 export interface InitialState {
-  user: IAuthData | null
+  user: any | null
   token: string | null
   isAuth: boolean
   loading: {

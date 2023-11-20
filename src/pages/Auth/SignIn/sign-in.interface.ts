@@ -1,4 +1,4 @@
 export interface IValues {
-  email: string
-  pasword: string
+  username: string
+  password: string
 }

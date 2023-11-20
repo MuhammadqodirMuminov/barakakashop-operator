@@ -1,5 +1,6 @@
 import { PrimaryBtn } from "@/components"
 import { ROUTES } from "@/constants"
+import { useTypedSelector } from "@/hooks"
 import { Form, Row, Typography } from "antd"
 import classnameBind from "classnames/bind"
 import { Link } from "react-router-dom"
@@ -9,14 +10,19 @@ import { IFormProps } from "./form.props"
 
 const cn = classnameBind.bind(styles)
 
-export const AuthForm = ({ text, loader, login, onFinish, children }: IFormProps) => {
-  // const { loading} = useSelector(authSelector);
+export const AuthForm = ({ text, login, onFinish, children }: IFormProps) => {
+  const { isAuth } = useTypedSelector((state) => state.auth)
 
   return (
     <Form className={cn("auth__form")} layout="vertical" onFinish={onFinish} autoComplete="off">
       {children}
 
-      <PrimaryBtn type="primary" loading={false} htmlType="submit" className={cn("auth__form-btn")}>
+      <PrimaryBtn
+        type="primary"
+        loading={isAuth}
+        htmlType="submit"
+        className={cn("auth__form-btn")}
+      >
         {text}
       </PrimaryBtn>
 

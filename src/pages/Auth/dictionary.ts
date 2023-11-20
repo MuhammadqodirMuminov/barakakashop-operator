@@ -2,7 +2,7 @@ export const authDictionary = {
   hasAccount: 'Have you got a account?',
   recovery: 'Recovery password',
   signIn: 'Sign In',
-  loginEmail: 'Email',
+  loginEmail: 'Username',
   loginPlaceholder: 'johndoe@gmail.com',
   registerEmail: 'Your email',
   registerPhone: 'Your phone number',

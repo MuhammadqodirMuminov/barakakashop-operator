@@ -22,18 +22,18 @@ export const getPrefix = (name: string, action: string) => `${name}${PREFIX}${ac
 export const passwordRegex = new RegExp(/^(?=.*[0-9])[a-zA-Z0-9][a-zA-Z0-9!@#$%^&*.,_-]{6,17}$/)
 
 export const makeErrMsg = (error: any | AxiosError) => {
-  if (!error.response?.data) {
-    return error.message
-  }
-
-  if (error.response?.data) {
-    return error.response.data.message
-  }
-
-  const { err: responseError } = error.response.data
+  const { message: responseError } = error.response.data
 
   if (responseError.errMsg instanceof Array) {
     return responseError.errMsg[0]
+  } else {
+    if (!error.response.data) {
+      return error.message
+    }
+
+    if (error.response?.data) {
+      return error.response.data.message
+    }
   }
 
   return responseError.errMsg

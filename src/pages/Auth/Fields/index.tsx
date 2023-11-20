@@ -7,9 +7,9 @@ import { IFieldsProps } from "./fields.props"
 
 const cn = classnameBind.bind(styles)
 
-export const EmailField = ({ label, value, placeholder }: IFieldsProps) => (
+export const UsernameField = ({ label, value, placeholder }: IFieldsProps) => (
   <Form.Item
-    name="Username"
+    name="username"
     label={label}
     initialValue={value}
     rules={[
