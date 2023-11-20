@@ -1,9 +1,9 @@
 import { BellOutlined, LogoutOutlined } from "@ant-design/icons"
-// import {Avatar, Modal, Typography} from 'antd';
 import classnamesBind from "classnames/bind"
 // import {authActions} from '@/store';
 // import {getLocalStorage, makeFileUrl} from '@/utils';
-import { Modal, Typography } from "antd"
+import { UserOutlined } from "@ant-design/icons"
+import { Avatar, Modal, Typography } from "antd"
 import styles from "./account.module.scss"
 import { accountDictionary } from "./dictionary"
 
@@ -24,12 +24,12 @@ export const Account = () => {
       <BellOutlined className={cn("account__icon")} />
       <LogoutOutlined className={cn("account__icon")} onClick={() => {}} />
 
-      {/* <Avatar src={makeFileUrl(admin?.photo)} icon={<UserOutlined />} /> */}
+      <Avatar src={""} icon={<UserOutlined />} />
 
       <div className={cn("account__info")}>
-        <Typography.Text strong>{/* {admin?.firstName} {admin?.lastName} */}</Typography.Text>
+        <Typography.Text strong>{/* {admin?.firstName} {admin?.lastName} */}Admin operator</Typography.Text>
 
-        <Typography.Text>{/* {admin?.email} */}</Typography.Text>
+        <Typography.Text>{/* {admin?.email} */} gamil.com</Typography.Text>
       </div>
 
       <Modal

@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     --2xl: 1.5rem; // 24px
     --3xl: 2rem; // 32px
     --full: 100%;
+    --white: white;
   }
 
   * {

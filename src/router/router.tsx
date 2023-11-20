@@ -4,7 +4,7 @@ import { ROUTES } from "@/constants"
 import { Dashboard } from "@/pages"
 import { Suspense } from "react"
 import { useRoutes } from "react-router-dom"
-import { SignIn } from "./loadable"
+import { Market, Payment, SignIn, Statistics } from "./loadable"
 import { ProtectedRoutes } from "./protected.routes"
 import { PublicRoutes } from "./public.routes"
 
@@ -22,6 +22,30 @@ export const Routes = ({ isAuth }: { isAuth: boolean }) =>
               element: (
                 <Suspense fallback={<Loader />}>
                   <Dashboard />
+                </Suspense>
+              )
+            },
+            {
+              path: ROUTES.shop,
+              element: (
+                <Suspense fallback={<Loader />}>
+                  <Market />
+                </Suspense>
+              )
+            },
+            {
+              path: ROUTES.statistics,
+              element: (
+                <Suspense fallback={<Loader />}>
+                  <Statistics />
+                </Suspense>
+              )
+            },
+            {
+              path: ROUTES.payment,
+              element: (
+                <Suspense fallback={<Loader />}>
+                  <Payment />
                 </Suspense>
               )
             }

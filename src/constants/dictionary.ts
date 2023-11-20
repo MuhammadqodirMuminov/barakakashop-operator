@@ -1,21 +1,8 @@
 export const constantsDictionary = {
   view: "View",
-  siteTitle: "Edu Admin",
+  siteTitle: "Barakashop",
   dashboard: "Dashboard",
-  tutors: "Tutors",
-  tutorRequests: "New tutor requests",
-  tutorsAll: "All tutors",
-  courses: "Courses",
-  addCourse: "Add new course",
-  coursesAll: "All courses",
-  videos: "Videos",
-  videosAll: "All videos",
-  students: "Students",
-  studentsAll: "All students",
-  reports: "Reports",
-  salary: "Salary",
-  settings: "Settings",
-  configurations: "Configuration",
-  plans: "Plans",
-  duration: "Lesson Duration"
+  shop: "Market",
+  statistics: "Statistics",
+  payment: "Payment"
 }

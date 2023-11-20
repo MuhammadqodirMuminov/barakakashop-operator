@@ -1,3 +1,6 @@
+export { SignIn } from "./Auth"
 export { Dashboard } from "./Dashboard"
+export { Market } from "./Market"
+export { Payment } from "./Payment"
+export { Statistics } from "./Statistics"
 export { Home } from "./home"
-export {SignIn} from "./Auth"
