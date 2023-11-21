@@ -1,14 +1,8 @@
-// import {useEffect} from 'react';
-// import {useDispatch, useSelector} from 'react-redux';
-// import {Title} from '@/components';
-// import {useBreadCrumbs} from '@/hooks';
-// import {getDashboard, usersSelector} from '@/store';
-// import {dashboardBreadcrumb} from './constants';
-// import {dashboardDictionary} from './dictionary';
-// import {Statistics} from './Statistics';
+import { Title } from "@/components"
+import { dashboardDictionary } from "./dictionary"
+import { StatisticsCard } from "./statisticscard"
 
 export const Dashboard = () => {
-  // const dispatch = useDispatch();
   // const {data: {dashboard}} = useSelector(usersSelector);
 
   // const getData = async () => dispatch(getDashboard());
@@ -17,13 +11,10 @@ export const Dashboard = () => {
   //   getData();
   // }, []);
 
-  // useBreadCrumbs(dashboardBreadcrumb);
-
   return (
     <>
-      <h1>Dashboard</h1>
-      {/* <Title>{dashboardDictionary.title}</Title> */}
-      {/* <Statistics statistics={dashboard} /> */}
+      <Title>{dashboardDictionary.title}</Title>
+      <StatisticsCard statistics={{}} />
     </>
   )
 }
