@@ -10,6 +10,14 @@ export interface IAuthResponse {
   accessToken: string
 }
 
+export interface IGetMeResponse {
+  status: number
+  message: string
+  data: IAuthData
+  refresh_token: string
+  access_token: string
+}
+
 export interface IAuthData {
   id: number
   username: string
@@ -24,6 +32,10 @@ export interface IAuthData {
 export interface IAuthSignIn {
   username: string
   password: string
+  callback: () => void
+}
+
+export interface IGetMeAuth {
   callback: () => void
 }
 

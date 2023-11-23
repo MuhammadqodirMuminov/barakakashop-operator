@@ -19,6 +19,7 @@ export const AuthService = {
     }
     return response
   },
+
   async getMe() {
     const response = await $axios.get<IAuthResponse>(EndPointes.auth.getme)
 

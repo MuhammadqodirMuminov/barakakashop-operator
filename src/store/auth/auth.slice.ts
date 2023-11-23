@@ -1,7 +1,7 @@
 import { cliearStorage } from "@/helpers"
 import { createSlice } from "@reduxjs/toolkit"
 import { StoreSlices } from "../slices-name"
-import { SignIn } from "./auth.actions"
+import { GetMe, SignIn } from "./auth.actions"
 import { InitialState } from "./auth.interface"
 
 const initialState: InitialState = {
@@ -52,6 +52,22 @@ export const authSlice = createSlice({
         state.token = payload.accessToken
       })
       .addCase(SignIn.rejected, (state, { payload }) => {
+        state.error = payload
+        state.loading.sign = false
+        state.isAuth = false
+      })
+      .addCase(GetMe.pending, (state) => {
+        state.loading.sign = true
+        state.error = null
+      })
+      .addCase(GetMe.fulfilled, (state, { payload }) => {
+        state.error = null
+        state.isAuth = true
+        state.loading.sign = false
+        state.user = payload.data
+        state.token = payload.accessToken
+      })
+      .addCase(GetMe.rejected, (state, { payload }) => {
         state.error = payload
         state.loading.sign = false
         state.isAuth = false
