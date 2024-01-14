@@ -8,6 +8,7 @@ import { Outlet } from "react-router-dom"
 import { Content } from "./Content"
 import { Header } from "./Header"
 import { Menu } from "./Menu"
+import { FooterMenu } from "./MenuFooter"
 import styles from "./layout.module.scss"
 
 const cn = classnamesBind.bind(styles)
@@ -57,15 +58,27 @@ export const Layout = () => {
       ) : null}
 
       <AntdLayout style={{ marginLeft: isMobile ? 0 : sideWidth }}>
-        <Header collapsed={value} onCollapsedClick={toggle} />
+        <Header isMobile={isMobile} collapsed={value} onCollapsedClick={toggle} />
 
         <Content>
           <Outlet />
         </Content>
 
-        <AntdLayout.Footer  style={{ position: "fixed", bottom: 0, left: 0, right: 0, background : '#001628' }}>
-          Footer
-        </AntdLayout.Footer>
+        {isMobile ? (
+          <AntdLayout.Footer
+            style={{
+              position: "fixed",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              background: "#001628",
+              margin: "0px",
+              padding: "10px 0px"
+            }}
+          >
+            <FooterMenu />
+          </AntdLayout.Footer>
+        ) : null}
       </AntdLayout>
     </AntdLayout>
   )
